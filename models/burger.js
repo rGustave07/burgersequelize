@@ -1,0 +1,30 @@
+// var orm = require("../config/orm");
+
+module.exports = function(sequelize, dataTypes){
+    let burger = sequelize.define("burgers", {
+      burger_name: dataTypes.STRING,
+      devoured: {
+          type: dataTypes.BOOLEAN,
+          defaultValue: false
+      }
+    });
+      return burger;
+}
+// var burger = {
+//   all: function(cb) {
+//     orm.all("burgers", function(res) {
+//       cb(res);
+//     });
+//   },
+//   create: function(name, cb) {
+//     orm.create("burgers", ["burger_name", "devoured"], [name, false], cb);
+//   },
+//   update: function(id, cb) {
+//     var condition = "id=" + id;
+//     orm.update("burgers", {
+//       devoured: true
+//     }, condition, cb);
+//   }
+// };
+
+// module.exports = burger;
